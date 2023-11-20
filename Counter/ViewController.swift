@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     private var _counter: Int = 0 {
         didSet {
-            counterLabel.text = "Значение счётчика: \(_counter)"
+            counterLabel.text = _counter > 0 ? "Значение счётчика: \(_counter)" : "0"
         }
     }
     var counter: Int {
@@ -35,5 +35,8 @@ class ViewController: UIViewController {
         counter -= 1
     }
     
+    @IBAction func resetCounter(_ sender: Any) {
+        counter = 0
+    }
 }
 
